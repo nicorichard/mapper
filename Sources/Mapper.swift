@@ -476,3 +476,5 @@ public struct Mapper {
         throw MapperError.missingFieldError(field: field)
     }
 }
+
+extension Mapper: Equatable, Hashable {}
