@@ -2,7 +2,7 @@ import Foundation
 
 /// Mapper creates strongly typed objects from a given NSDictionary based on the mapping provided by
 /// implementing the Mappable protocol (see `Mappable` for an example).
-public struct Mapper {
+public struct Mapper: Equatable, Hashable {
     private let JSON: NSDictionary
 
     /// Create a Mapper with a NSDictionary to use as source data
@@ -476,5 +476,3 @@ public struct Mapper {
         throw MapperError.missingFieldError(field: field)
     }
 }
-
-extension Mapper: Equatable, Hashable {}
